@@ -33,8 +33,22 @@ def calculate_grade(data : list):
 def convert_exercise_points(exercises_completed : int) -> int:
     return exercises_completed // 10
 
-def calculate_total_points(exam: int, exercises: int) -> int: # Added this new function. Need to delete other irrelevant code and functions
+def calculate_total_points(exam: int, exercises: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
     return exam + convert_exercise_points(exercises)
+
+def determine_grade(total_points: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
+    if total_points <= 14:
+        return 0
+    elif total_points <= 17:
+        return 1
+    elif total_points <= 20:
+        return 2
+    elif total_points <= 23:
+        return 3
+    elif total_points <= 27:
+        return 4
+    else:
+        return 5
 
 def calculate_course_grade(exam_points : int, points : int) -> int:
     grade = exam_points + points
