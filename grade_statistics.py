@@ -5,7 +5,16 @@ def get_user_input() -> list:
         user_input = input("Exam points and exercises completed: ")
         if user_input == "":
             break
-        data.append(user_input.split())
+        try:
+            exam_str, exercises_str = user_input.split()
+            exam_points = int(exam_str)
+            exercises_completed = int(exercises_str)
+            if 0 <= exam_points <= 30 and 0 <= exercises_completed <= 100:
+                data.append((exam_points, exercises_completed))
+            else:
+                print("Invalid input. Exam (0-30), Exercises (0-100).")
+        except ValueError:
+            print("Invalid input. Please enter two integers.")    
     return data
 
 def calculate_grade(data : list):
