@@ -1,17 +1,18 @@
 def get_user_input() -> list:
-    points_exercises = []
+    """Collect exam and exercise inputs from the user."""
+    data = []
     while True:
         user_input = input("Exam points and exercises completed: ")
         if user_input == "":
             break
-        points_exercises.append(user_input.split())
-    return points_exercises
+        data.append(user_input.split())
+    return data
 
-def calculate_grade(points_exercises : list):
+def calculate_grade(data : list):
     points = 0
-    length = len(points_exercises)
+    length = len(data)
     grade_sum = 0
-    for entry in points_exercises:
+    for entry in data:
         exam_points = int(entry[0])
         exercises_completed = int(entry[1])
         points = convert_exercise_points(exercises_completed)
@@ -20,7 +21,7 @@ def calculate_grade(points_exercises : list):
         points_average = calculate_average(grade_sum, length)
     print("Statistics:")
     print(f"Points average: {points_average}")
-    calculate_grade_distribution(points_exercises, length)
+    calculate_grade_distribution(data, length)
 
 def convert_exercise_points(points : int) -> int:
     exercise_points = points // 10
@@ -37,10 +38,10 @@ def calculate_average(grade_sum : int, length : int) -> float:
 def calculate_pass_percentage(grade : int, length: int) -> float:
     return 0
 
-def calculate_grade_distribution(points_exercises: list, length):
+def calculate_grade_distribution(data: list, length):
     grade_0 = grade_1 = grade_2 = grade_3 = grade_4 = grade_5 = 0
 
-    for entry in points_exercises:
+    for entry in data:
         exam_points = int(entry[0])
         exercises_completed = int(entry[1])
         points = convert_exercise_points(exercises_completed)
@@ -77,8 +78,8 @@ def calculate_grade_distribution(points_exercises: list, length):
 
 
 def main():
-    points_exercises = get_user_input()
-    calculate_grade(points_exercises)
+    data = get_user_input()
+    calculate_grade(data)
     
 
 
