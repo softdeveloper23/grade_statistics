@@ -24,8 +24,6 @@ def calculate_grade(data : list):
     for entry in data:
         exam_points = int(entry[0])
         exercises_completed = int(entry[1])
-        points = convert_exercise_points(exercises_completed)
-        grade = calculate_course_grade(exam_points, points)
         grade_sum += grade 
         points_average = calculate_average(grade_sum, length)
     print("Statistics:")
