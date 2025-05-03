@@ -32,9 +32,8 @@ def calculate_grade(data : list):
     print(f"Points average: {points_average}")
     calculate_grade_distribution(data, length)
 
-def convert_exercise_points(points : int) -> int:
-    exercise_points = points // 10
-    return exercise_points
+def convert_exercise_points(exercises_completed : int) -> int:
+    return exercises_completed // 10
 
 def calculate_course_grade(exam_points : int, points : int) -> int:
     grade = exam_points + points
