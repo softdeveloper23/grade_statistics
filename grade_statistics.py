@@ -35,6 +35,9 @@ def calculate_grade(data : list):
 def convert_exercise_points(exercises_completed : int) -> int:
     return exercises_completed // 10
 
+def calculate_total_points(exam: int, exercises: int) -> int: # Added this new function. Need to delete other irrelevant code and functions
+    return exam + convert_exercise_points(exercises)
+
 def calculate_course_grade(exam_points : int, points : int) -> int:
     grade = exam_points + points
     return grade
