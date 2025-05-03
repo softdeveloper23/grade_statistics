@@ -1,4 +1,4 @@
-def results() -> list:
+def get_user_input() -> list:
     points_exercises = []
     while True:
         user_input = input("Exam points and exercises completed: ")
@@ -77,7 +77,7 @@ def calculate_grade_distribution(points_exercises: list, length):
 
 
 def main():
-    points_exercises = results()
+    points_exercises = get_user_input()
     calculate_grade(points_exercises)
     
 
