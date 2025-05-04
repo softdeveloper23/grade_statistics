@@ -39,7 +39,7 @@ def determine_grade(total_points: int) -> int:
     else:
         return 5
     
-def calculate_statistics(data: list):
+def calculate_statistics(data: list[tuple[int, int]]) -> None:
     total_points_list = []
     grades = []
 
