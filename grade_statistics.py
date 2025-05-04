@@ -22,10 +22,10 @@ def get_user_input() -> list:
 def convert_exercise_points(exercises_completed : int) -> int:
     return exercises_completed // 10
 
-def calculate_total_points(exam: int, exercises: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
+def calculate_total_points(exam: int, exercises: int) -> int: 
     return exam + convert_exercise_points(exercises)
 
-def determine_grade(total_points: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
+def determine_grade(total_points: int) -> int: 
     if total_points <= 14:
         return 0
     elif total_points <= 17:
@@ -69,4 +69,5 @@ def main():
         print("No data entered.")
 
 
-main()
+if __name__ == "__main__":
+    main()
