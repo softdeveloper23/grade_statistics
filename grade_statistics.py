@@ -124,8 +124,10 @@ def calculate_grade_distribution(data: list, length):
 
 def main():
     data = get_user_input()
-    calculate_grade(data)
-    
+    if data:
+        calculate_statistics(data)
+    else:
+        print("No data entered.")
 
 
 main()
