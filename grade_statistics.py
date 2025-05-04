@@ -50,7 +50,13 @@ def calculate_statistics(data: list):
     pass_count = len([g for g in grades if g > 0])
     pass_percentage = (pass_count / len(grades)) * 100
 
-    
+    print("\nStatistics:")
+    print(f"Points average: {average:.1f}")
+    print(f"Pass percentage: {pass_percentage:.1f}")
+    print("Grade distribution:")
+    for g in reversed(range(6)):
+        stars = grades.count(g)
+        print(f"  {g}: {'*' * stars}")
 
 def determine_grade(total_points: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
     if total_points <= 14:
