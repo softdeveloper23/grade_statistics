@@ -36,6 +36,22 @@ def convert_exercise_points(exercises_completed : int) -> int:
 def calculate_total_points(exam: int, exercises: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
     return exam + convert_exercise_points(exercises)
 
+def calculate_statistics(data: list):
+    total_points_list = []
+    grades = []
+
+    for exam_points, exercises_completed in data:
+        total_points = calculate_total_points(exam_points, exercises_completed)
+        grade = determine_grade(total_points)
+        total_points_list.append(total_points)
+        grades.append(grade)
+
+    average = sum(total_points_list) / len(total_points_list)
+    pass_count = len([g for g in grades if g > 0])
+    pass_percentage = (pass_count / len(grades)) * 100
+
+    
+
 def determine_grade(total_points: int) -> int: # Added this new function. Need to delete other irrelevant code and functions.
     if total_points <= 14:
         return 0
