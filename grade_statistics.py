@@ -40,6 +40,10 @@ def determine_grade(total_points: int) -> int:
         return 5
     
 def calculate_statistics(data: list[tuple[int, int]]) -> None:
+    if len(data) == 0:
+        print("No data to analyze.")
+        return
+
     total_points_list = []
     grades = []
 
