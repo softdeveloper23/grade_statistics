@@ -61,6 +61,12 @@ def calculate_statistics(data: list[tuple[int, int]]) -> None:
         stars = grades.count(g)
         print(f"  {g}: {'*' * stars}")
 
+    print("\nIndividual results:")
+    for i, (exam_points, exercises_completed) in enumerate(data, start=1):
+        total_points = calculate_total_points(exam_points, exercises_completed)
+        grade = determine_grade(total_points)
+        print(f"  Student {i}: Exam {exam_points} + Exercises {convert_exercise_points(exercises_completed)} = Total {total_points} → Grade {grade}")    
+
 def main():
     data = get_user_input()
     if data:
