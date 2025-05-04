@@ -4,9 +4,10 @@ def get_user_input() -> list:
     data = []
     i = 0
     while i < results_input:
-        user_input = input(f"({i + 1}) Enter the exam points and exercises completed: ")
+        user_input1 = input(f"({i + 1}) Enter the exam points: ")
+        user_input2 = input(f"({i + 1}) Enter the exercises completed: ")
         try:
-            exam_str, exercises_str = user_input.split()
+            exam_str, exercises_str = user_input1, user_input2
             exam_points = int(exam_str)
             exercises_completed = int(exercises_str)
             if 0 <= exam_points <= 30 and 0 <= exercises_completed <= 100:
